@@ -1,0 +1,97 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+@import "tailwindcss";
+
+
+@import "preline/variants.css";
+/* @import "./node_modules/preline/variants.css"; */
+
+/* Loader.css */
+
+/* Loader.css */
+
+*{
+  scroll-behavior: "smooth";
+}
+.loader-container {
+  position: relative;
+  inset: 0;
+  z-index: 50;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+}
+
+.loader-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.loader-text {
+  font-family: "Fira Code", monospace;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* roughly equivalent to 'top-10' in Tailwind */
+  background-color: none; /* red background */
+  color: white; /* text color red */
+  font-size: 2.4vw; /* text-2xl ~ 24px */
+  font-weight: 500;
+  animation: pulse 2s infinite;
+  text-align: center;
+}
+
+.loader-text-2{
+  font-size: 1.8vw;
+  font-weight: 150;
+}
+
+.fade-text {
+  opacity: 1;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.fade-text.hidden {
+  opacity: 0;
+}
+
+
+
+/* Main container for loader */
+/*  */
+
+/* Pulse animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* ✨ Fading overlay */
+.fade-overlay {
+  position: absolute;
+  inset: 0; /* top: 0; bottom: 0; left: 0; right: 0; shorthand */
+  z-index: 10; /* Higher than glitch and text */
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0) 30%, /* Fully transparent center */
+    rgba(0, 0, 0, 0.7) 70%, /* Start darkening edges */
+    rgba(0, 0, 0, 1) 100% /* Fully black at the corners */
+  );
+  pointer-events: none; /* Allows clicks to pass through if needed */
+}
+
+
+/* Pulse Animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
